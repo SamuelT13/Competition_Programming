@@ -8,7 +8,7 @@ int main(){
 	ULL total, mult, time;
 	
 	ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+    	cin.tie(NULL);
     
 	cin >> test;
 	

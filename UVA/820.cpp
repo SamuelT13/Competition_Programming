@@ -49,7 +49,7 @@ int main(){
 		max_flow = 0;
 		
 		while (1){
-            flow = 0;
+            		flow = 0;
 			vector<int> dist(nodes, INT_MAX); dist[s] = 0;
 			queue<int> q; q.push(s);
 			p.assign(nodes, -1);
@@ -72,7 +72,7 @@ int main(){
 			max_flow += flow;
 		}
         
-        printf("Network %d\nThe bandwidth is %d.\n\n", ++count, max_flow);
+        	printf("Network %d\nThe bandwidth is %d.\n\n", ++count, max_flow);
 	}	
 	return 0;
 }

@@ -11,7 +11,7 @@ int main(){
 	ofstream out("out.txt");
 
 	ios_base::sync_with_stdio(false);
-    in.tie(NULL);
+    	in.tie(NULL);
 	
 	in >> test;
 	

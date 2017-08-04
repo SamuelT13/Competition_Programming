@@ -50,8 +50,8 @@ void graphCheck(int index){
 				
 				cout << "BACK EDGE (Cycle): " << index << " - " << ind2 << "\n";
 			}
-		  }
-        }
+		}
+     
 		else if (dfs_num[ind2] == VISITED){
 			temp.x = index; temp.y = ind2;
 			edges.push_back(temp);

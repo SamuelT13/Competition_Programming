@@ -41,8 +41,8 @@ int main(){
 	int s_x, s_y, e_x, e_y, pos_s, pos_e, b_x, b_y, c_x, c_y, pos_b, pos_c;
 	p = new info[36];
     
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+    	ios_base::sync_with_stdio(false);
+    	cin.tie(NULL);
 	
 	while (cin >> s_y >> s_x && (s_x || s_y)){		
 		AdjList = new vector<int>[36];

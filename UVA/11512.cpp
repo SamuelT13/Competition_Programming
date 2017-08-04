@@ -47,8 +47,8 @@ void constructSA() { // this version can go up to 100000 characters
 		
 		tempRA[SA[0]] = r = 0; // re-ranking; start from rank r = 0
 
-			for (i = 1; i < n; i++) // compare adjacent suffixes
-				tempRA[SA[i]] = // if same pair => same rank r; otherwise, increase r
+		for (i = 1; i < n; i++) // compare adjacent suffixes
+			tempRA[SA[i]] = // if same pair => same rank r; otherwise, increase r
 
 		(RA[SA[i]] == RA[SA[i-1]] && RA[SA[i]+k] == RA[SA[i-1]+k]) ? r : ++r;
 
@@ -76,21 +76,21 @@ void computeLCP() {
 	
 		PLCP[i] = L;
 		L = max(L-1, 0); // L decreased max n times
-		}
+	}
 		
 	for (i = 0; i < n; i++) // compute LCP in O(n)
 		LCP[i] = PLCP[SA[i]]; // put the permuted LCP to the correct position
 }
 
 ii LRS() {                 // returns a pair (the LRS length and its index)
-  int i, idx = 0, maxLCP = -1;
-  for (i = 1; i < n; i++)                         // O(n), start from i = 1
-    if (LCP[i] > maxLCP){
-      maxLCP = LCP[i];
-      idx = i;
-    }
+	int i, idx = 0, maxLCP = -1;
+	for (i = 1; i < n; i++)                         // O(n), start from i = 1
+    		if (LCP[i] > maxLCP){
+      			maxLCP = LCP[i];
+      			idx = i;
+   	 	}
     
-  return ii(maxLCP, idx);
+  	return ii(maxLCP, idx);
 }
 
 int main() {
@@ -103,7 +103,7 @@ int main() {
 	cin >> test;
 	
 	while (test--){
-        c = i = 0;
+        	c = i = 0;
 		cin >> T;
 		T += '$';
 		n = int(T.length());
@@ -112,14 +112,14 @@ int main() {
 		ii ans = LRS();
 	
 		if (ans.first <= 0){ cout << "No repetitions found!\n"; continue;}
-        P = T.substr(SA[ans.second], ans.first);
+        	P = T.substr(SA[ans.second], ans.first);
         
-        while (true){
-            i = T.find(P, i);
-            if (i == string::npos) break;
-            i++; c++;
-        }
-        cout << P << " " << c << "\n";
+        	while (true){
+        		i = T.find(P, i);
+            		if (i == string::npos) break;
+            		i++; c++;
+        	}
+        	cout << P << " " << c << "\n";
 	}
 	
 	return 0;

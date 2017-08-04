@@ -29,7 +29,7 @@ int main(){
 		sort(req.begin(), req.end()); sort(col.begin(), col.end());
 		
 		for (int i = 0; i < avai; i++)
-            if (ind >= total) break;
+            		if (ind >= total) break;
 			else if (req[ind] <= col[i]) c++, ind++;
 		
 		(c == total)? cout << "yes\n" : cout << "no\n";

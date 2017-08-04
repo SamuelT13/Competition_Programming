@@ -50,9 +50,9 @@ int main(){
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	
-    cout.setf(ios::fixed);
-    cout.setf(ios::showpoint);
-    cout.precision(4);
+    	cout.setf(ios::fixed);
+    	cout.setf(ios::showpoint);
+    	cout.precision(4);
     
 	while (cin >> total && total){
 		P.clear(); P.assign(total, point(0, 0));

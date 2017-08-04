@@ -23,7 +23,7 @@ int st_query(int s, int e){
 int main(){
 	int N;
     
-    cin >> N;
+    	cin >> N;
 	
 	arr.assign(N, 0); st.assign(N, vector<int>());
 	for (int i = 0; i < N; i++){

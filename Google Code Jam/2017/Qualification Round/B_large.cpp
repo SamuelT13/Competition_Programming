@@ -11,8 +11,8 @@ int main(){
 	string next, temp;
 	char prev;
 	
-    ios_base::sync_with_stdio(false);
-    in.tie(NULL);
+    	ios_base::sync_with_stdio(false);
+    	in.tie(NULL);
     
 	in >> total;
 	

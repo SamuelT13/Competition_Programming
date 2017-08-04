@@ -82,16 +82,16 @@ void computeLCP() {
 }
 
 ii LCS(){                 // returns a pair (the LCS length and its index)
-  int i, idx = 0, maxLCP = -1;
-  for (i = 1; i < n; i++)                         // O(n), start from i = 1
-    if (owner(SA[i]) != owner(SA[i-1]) && LCP[i] > maxLCP)
-      maxLCP = LCP[i], idx = i;
-  return ii(maxLCP, idx);
+  	int i, idx = 0, maxLCP = -1;
+  	for (i = 1; i < n; i++)                         // O(n), start from i = 1
+    		if (owner(SA[i]) != owner(SA[i-1]) && LCP[i] > maxLCP)
+      			maxLCP = LCP[i], idx = i;
+  	return ii(maxLCP, idx);
 }
 
 int main() {
-    cin >> T;
-	n = (int)T.length(); // input T as per normal, without the ‘$’
+    	cin >> T;
+	n = (int)T.length(); // input T as per normal, without the â€˜$â€™
 	n++;
 	T += '$'; // add terminating character
 	constructSA();

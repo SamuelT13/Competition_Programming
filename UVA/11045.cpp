@@ -28,8 +28,8 @@ int main(){
 	string s1, s2, list[6] = {"XS", "S", "M", "L", "XL", "XXL"};
 	in >> test;
 	
-    //ios_base::sync_with_stdio(false);
-    //cin.tie(NULL);
+    	//ios_base::sync_with_stdio(false);
+    	//cin.tie(NULL);
     
 	while (test--){
 		in >> shirts >> people;
@@ -60,9 +60,9 @@ int main(){
 			}
 		}
         
-        //for (int i = 0; i < nodes; i++){
-        //  for (int j = 0; j < nodes; j++) cout << res[i][j]; cout << endl;
-        //}
+        	//for (int i = 0; i < nodes; i++){
+        	//  for (int j = 0; j < nodes; j++) cout << res[i][j]; cout << endl;
+        	//}
 	
 		max_flow = 0;
 		

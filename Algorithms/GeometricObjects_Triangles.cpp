@@ -40,9 +40,9 @@ double perimeter(double a, double b, double c){
 }
  
 double area(double ab, double bc, double ca) {
-  // Heron's formula, split sqrt(a * b) into sqrt(a) * sqrt(b); in implementation
-  double s = 0.5 * perimeter(ab, bc, ca);
-  return sqrt(s) * sqrt(s - ab) * sqrt(s - bc) * sqrt(s - ca); 
+	// Heron's formula, split sqrt(a * b) into sqrt(a) * sqrt(b); in implementation
+  	double s = 0.5 * perimeter(ab, bc, ca);
+  	return sqrt(s) * sqrt(s - ab) * sqrt(s - bc) * sqrt(s - ca); 
 }
   
 double rInCircle(double ab, double bc, double ca){
@@ -58,34 +58,35 @@ double rInCircle(point a, point b, point c){
 // if this function returns 1, ctr will be the inCircle center
 // and r is the same as rInCircle
 int inCircle(point p1, point p2, point p3, point &ctr, double &r) {
-  r = rInCircle(p1, p2, p3);
-  if (fabs(r) < EPS) return 0;                   // no inCircle center
+  	r = rInCircle(p1, p2, p3);
+  	if (fabs(r) < EPS) return 0;                   // no inCircle center
 
-  line l1, l2;                    // compute these two angle bisectors
-  double ratio = dist(p1, p2) / dist(p1, p3);
-  point p = translate(p2, scale(toVec(p2, p3), ratio / (1 + ratio)));
-  pointsToLine(p1, p, l1);
+  	line l1, l2;                    // compute these two angle bisectors
+  	double ratio = dist(p1, p2) / dist(p1, p3);
+  	point p = translate(p2, scale(toVec(p2, p3), ratio / (1 + ratio)));
+  	pointsToLine(p1, p, l1);
 
-  ratio = dist(p2, p1) / dist(p2, p3);
-  p = translate(p1, scale(toVec(p1, p3), ratio / (1 + ratio)));
-  pointsToLine(p2, p, l2);
-
-  areIntersect(l1, l2, ctr);           // get their intersection point
-  return 1; 
+  	ratio = dist(p2, p1) / dist(p2, p3);
+  	p = translate(p1, scale(toVec(p1, p3), ratio / (1 + ratio)));
+  	pointsToLine(p2, p, l2);
+	
+  	areIntersect(l1, l2, ctr);           // get their intersection point
+  	return 1; 
 }
 
 // returns true if point d is inside the circumCircle defined by a,b,c
 int inCircumCircle(point a, point b, point c, point d) {
-  return (a.x - d.x) * (b.y - d.y) * ((c.x - d.x) * (c.x - d.x) + (c.y - d.y) * (c.y - d.y)) +
-         (a.y - d.y) * ((b.x - d.x) * (b.x - d.x) + (b.y - d.y) * (b.y - d.y)) * (c.x - d.x) +
-         ((a.x - d.x) * (a.x - d.x) + (a.y - d.y) * (a.y - d.y)) * (b.x - d.x) * (c.y - d.y) -
-         ((a.x - d.x) * (a.x - d.x) + (a.y - d.y) * (a.y - d.y)) * (b.y - d.y) * (c.x - d.x) -
-         (a.y - d.y) * (b.x - d.x) * ((c.x - d.x) * (c.x - d.x) + (c.y - d.y) * (c.y - d.y)) -
-         (a.x - d.x) * ((b.x - d.x) * (b.x - d.x) + (b.y - d.y) * (b.y - d.y)) * (c.y - d.y) > 0 ? 1 : 0;
+  	return (a.x - d.x) * (b.y - d.y) * ((c.x - d.x) * (c.x - d.x) + (c.y - d.y) * (c.y - d.y)) +
+         	(a.y - d.y) * ((b.x - d.x) * (b.x - d.x) + (b.y - d.y) * (b.y - d.y)) * (c.x - d.x) +
+         	((a.x - d.x) * (a.x - d.x) + (a.y - d.y) * (a.y - d.y)) * (b.x - d.x) * (c.y - d.y) -
+         	((a.x - d.x) * (a.x - d.x) + (a.y - d.y) * (a.y - d.y)) * (b.y - d.y) * (c.x - d.x) -
+         	(a.y - d.y) * (b.x - d.x) * ((c.x - d.x) * (c.x - d.x) + (c.y - d.y) * (c.y - d.y)) -
+         	(a.x - d.x) * ((b.x - d.x) * (b.x - d.x) + (b.y - d.y) * (b.y - d.y)) * (c.y - d.y) > 0 ? 1 : 0;
 }
 
 bool canFormTriangle(double a, double b, double c) {
-  return (a + b > c) && (a + c > b) && (b + c > a); }
+	return (a + b > c) && (a + c > b) && (b + c > a); 
+}
 
 double rCircumCircle(double ab, double bc, double ca) {
 	return ab * bc * ca / (4.0 * area(ab, bc, ca)); 
@@ -96,7 +97,6 @@ double rCircumCircle(point a, point b, point c){
 }
 
 int main(){
-	
 	cout << pi << endl;
 	
 	return 0;

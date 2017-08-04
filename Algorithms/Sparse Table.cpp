@@ -12,7 +12,7 @@ void st_init(int N){
 	for (int j = 1; (1 << j) <= N; j++)
 		for (int i = 0; i + (1 << j) < N; i++)
 			st[i][j] = min( st[i][j-1], 
-							st[i + (1 << (j-1))][j-1]);	
+				        st[i + (1 << (j-1))][j-1]);	
 }
 
 int st_query(int s, int e){

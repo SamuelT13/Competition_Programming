@@ -15,17 +15,17 @@ void dfs(int index){
 		int ind2 = AdjList[index][j];
 		
 		if (vis[ind2] == -1){
-            dist[ind2] = dist[index] + 1;
-            dfs(ind2);
-        }
+            		dist[ind2] = dist[index] + 1;
+        	    	dfs(ind2);
+ 	       	}
 	}
 }
 
 int main(){
 	int test, V, E, x, y, ind;
 	
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+    	ios_base::sync_with_stdio(false);
+    	cin.tie(NULL);
     
 	cin >> test;
 	
@@ -43,28 +43,28 @@ int main(){
 			AdjList[x].push_back(y); AdjList[y].push_back(x);
 		}	
         
-        dist[ind] = 0;
+        	dist[ind] = 0;
 		dfs(ind);
 		int maxim = -1;
-        for (int i = 0; i < V; i++)
-            if (dist[i] > maxim && dist[i] != INT_MAX){
-                ind = i; 
-                maxim = dist[i];
-            }    
-        //cout << "Start: " << ind+1;
+        	for (int i = 0; i < V; i++)
+            		if (dist[i] > maxim && dist[i] != INT_MAX){
+                	ind = i; 
+                	maxim = dist[i];
+            	}    
+        	//cout << "Start: " << ind+1;
         
         
-        vis.assign(V, -1); dist.assign(V, INT_MAX); 
-        dist[ind] = 0;
-        dfs(ind);
+        	vis.assign(V, -1); dist.assign(V, INT_MAX); 
+        	dist[ind] = 0;
+        	dfs(ind);
 		maxim = -1;
-        for (int i = 0; i < V; i++)
-            if (dist[i] > maxim && dist[i] != INT_MAX){
-                ind = i; 
-                maxim = dist[i];
-            }    
+        	for (int i = 0; i < V; i++)
+            		if (dist[i] > maxim && dist[i] != INT_MAX){
+                		ind = i; 
+                		maxim = dist[i];
+            		}    
         
-       //cout << " | End: " << ind+1 << " | Max: ";
+       		//cout << " | End: " << ind+1 << " | Max: ";
 		
 		cout << maxim+1 << "\n";
 	}

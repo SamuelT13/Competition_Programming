@@ -7,7 +7,7 @@ int main(){
 	int test, total, next, c, count;
 	vector<set<int> > chambers;
 	bool ok;
-    vector<bool> press;
+    	vector<bool> press;
 
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
@@ -16,7 +16,7 @@ int main(){
 	
 	for (int t = 1; t <= test; t++){
 		cin >> total;
-        press.clear(); press.assign(total, 1);
+        	press.clear(); press.assign(total, 1);
 		chambers.clear(); chambers.assign(total, set<int>());
 		
 		for (int i = 0; i < total; i++){
@@ -29,7 +29,7 @@ int main(){
 		}
 		
 		for (int i = 0; i < total; i++){ //repeat ~(total) times
-            count = 0;
+            		count = 0;
             
 			for (int j = 0; j < total; j++){
 				if (!press[j]) continue; //already un-pressed
@@ -41,14 +41,14 @@ int main(){
 					}
                 
 				if (!ok){ 
-                    chambers[j].clear(); //un-press jth button
-                    press[j] = 0;
-                    count++;
-                }
+                    			chambers[j].clear(); //un-press jth button
+                    			press[j] = 0;
+                    			count++;
+                		}
 			}
             
-            if (!count) break; //no new buttons were un-pressed
-        }
+            		if (!count) break; //no new buttons were un-pressed
+        	}
 		
 		cout << "Case #" << t << ":";
 		for (int i = 0; i < total; i++)

@@ -26,7 +26,6 @@ int Aug(int index){
 // only directed edge from left set to right set is needed
 
 int main(){
-	
 	int MCBM = 0;
 	match.assign(V, -1);
 	

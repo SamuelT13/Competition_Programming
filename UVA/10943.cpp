@@ -8,8 +8,8 @@ int main(){
 	int N, K;
 	vector<vector<int> > ways;
 	
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+    	ios_base::sync_with_stdio(false);
+    	cin.tie(NULL);
     
 	while (cin >> N >> K && (N||K)){
 		ways.clear();

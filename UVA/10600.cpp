@@ -87,8 +87,8 @@ int main(){
 		cout << mst_cost  << " ";
 		mst_cost = -1;
 		for (int j = 0; j < (int)edges.size(); j++){
-            int count(0);
-            int p = 
+            		int count(0);
+            		int p = 
 			new_cost = 0;
 			QuickUnion UF(schools);
 			
@@ -96,7 +96,7 @@ int main(){
 				pair<int, pair<int, int> > front = EdgeList[i];
 	
 				if (!UF.find(front.second.first, front.second.second) && EdgeList[i] != edges[j]){
-                    count++;
+                    			count++;
 					new_cost += front.first;
 					UF.unite(front.second.first, front.second.second);
 				}

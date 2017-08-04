@@ -72,15 +72,17 @@ double dot(vec a, vec b) { return (a.x * b.x + a.y * b.y); }
 double norm_sq(vec v) { return v.x * v.x + v.y * v.y; }
 
 double angle(point a, point o, point b) {  // returns angle aob in rad
-  vec oa = toVec(o, a), ob = toVec(o, b);
-  return acos(dot(oa, ob) / sqrt(norm_sq(oa) * norm_sq(ob))); }
+	vec oa = toVec(o, a), ob = toVec(o, b);
+  	return acos(dot(oa, ob) / sqrt(norm_sq(oa) * norm_sq(ob))); 
+}
 
 double cross(vec a, vec b) { return a.x * b.y - a.y * b.x; }
 
 // note: to accept collinear points, we have to change the `> 0'
 // returns true if point r is on the left side of line pq
 bool ccw(point p, point q, point r) {
-  return cross(toVec(p, q), toVec(p, r)) > 0; }
+	return cross(toVec(p, q), toVec(p, r)) > 0; 
+}
 
 //vertices are listed in counter-clockwise order
 bool isConvex(const vector<point>& P){
@@ -147,7 +149,6 @@ int main(){
 	P.push_back(point(9, 7)); // P4
 	P.push_back(point(1, 7)); // P5
 	P.push_back(P[0]); // important: loop back
-
 
 	return 0;
 }

@@ -16,8 +16,8 @@ int main(){
 	vector<door> list;
 	door temp;
 	
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+    	ios_base::sync_with_stdio(false);
+    	cin.tie(NULL);
     
 	cin >> test;
 	

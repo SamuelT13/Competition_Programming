@@ -32,10 +32,10 @@ int main(){
 	cin.tie(NULL);
 	
 	while (cin >> V && V){
-        isBipartite = true;
-        topo.clear();
-        dfs_num.clear();
-        dfs_num.assign(V, UNVISITED);
+        	isBipartite = true;
+        	topo.clear();
+        	dfs_num.clear();
+        	dfs_num.assign(V, UNVISITED);
         
 		cin >> E;
 		AdjList = new vector<int>[V];
@@ -44,14 +44,14 @@ int main(){
 			cin >> x >> y;
 			s = x;
 			AdjList[x].push_back(y);
-            AdjList[y].push_back(x);
+            		AdjList[y].push_back(x);
 		}
 		
 		if (E){
-            //dfs(s);
-            //reverse(topo.begin(), topo.end());
-            //s = topo[0];
-            //for (unsigned int i = 0; i < topo.size(); i++) cout << topo[i] << " "; cout << endl;
+            		//dfs(s);
+            		//reverse(topo.begin(), topo.end());
+            		//s = topo[0];
+            		//for (unsigned int i = 0; i < topo.size(); i++) cout << topo[i] << " "; cout << endl;
             
 			queue<int> q; q.push(s);
 			vector<int> color(V,-1); color[s] = 0;

@@ -47,7 +47,6 @@ class QuickUnion{
 };
 
 int main(){
-	
 	vector< pair<int, pair<int, int> > > EdgeList;
 	
 	for (int i = 0; i < E; i++){

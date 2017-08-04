@@ -74,7 +74,7 @@ int main(){
 	ofstream out("out.txt");
 	
 	ios_base::sync_with_stdio(false);
-    in.tie(NULL);	
+    	in.tie(NULL);	
 	
 	in >> test;
 	
@@ -82,8 +82,8 @@ int main(){
 		in >> dim >> total;
 		
 		grid.clear(); grid.assign(dim, vector<char>());	
-        changes.clear();
-        score = 0;
+        	changes.clear();
+        	score = 0;
 		
 		for (int i = 0; i < dim; i++) grid[i].assign(dim, '.');
 		

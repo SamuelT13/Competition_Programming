@@ -43,7 +43,7 @@ int main(){
 				}
 			}
 		
-	cout << "RFP #" << num++ << endl << p[index].name << endl;
-	delete [] p;
+		cout << "RFP #" << num++ << endl << p[index].name << endl;
+		delete [] p;
 	}
 }

@@ -30,25 +30,25 @@ int main(){
 		}
 		
 		for (int i = 0; i < R; i++){
-            if (!row[i]) continue;
+        	    if (!row[i]) continue;
 			for (int j = 0; j < C; j++){
 				if (grid[i][j] != '?'){
 					for (int l = 0; l < j; l++) if (grid[i][l] != '?') break; else grid[i][l] = grid[i][j];
 					for (int l = j+1; l < C; l++) if (grid[i][l] != '?') break; else grid[i][l] = grid[i][j];
 				}
 			}
-        }
+        	}
 	
-        for (int m = 0; m < R; m++){
-            for (int i = 0; i < R; i++){
-                if (row[i]) continue;
-                if (i && row[i-1]) ind = i-1;
-                else if (i < R-1 && row[i+1]) ind = i+1;
-                else continue;
-                row[i] = true;
-                for (int j = 0; j < C; j++) grid[i][j] = grid[ind][j];
-            }
-        }
+        	for (int m = 0; m < R; m++){
+        	    for (int i = 0; i < R; i++){
+                	if (row[i]) continue;
+               	 	if (i && row[i-1]) ind = i-1;
+                	else if (i < R-1 && row[i+1]) ind = i+1;
+                	else continue;
+                	row[i] = true;
+                	for (int j = 0; j < C; j++) grid[i][j] = grid[ind][j];
+            		}
+        	}
 		out << "Case #" << t << ":\n";
 		for (int i = 0; i < R; i++){
 			for (int j = 0; j < C; j++) out << grid[i][j]; out << "\n";

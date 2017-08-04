@@ -96,7 +96,7 @@ double cross(vec a, vec b){
 	return a.x * b.y - a.y * b.x; 
 }
 
-// note: to accept collinear points, we have to change the ‘> 0’
+// note: to accept collinear points, we have to change the â€˜> 0â€™
 // returns true if point r is on the left side of line pq
 bool ccw(point p, point q, point r){
 	return cross(toVec(p, q), toVec(p, r)) > 0;
@@ -168,7 +168,7 @@ bool angleCmp(point a, point b){
 	return (atan2(d1y, d1x) - atan2(d2y, d2x)) < 0; //compare the 2 angles	
 }
 
-//O(n log n) Graham’s Scan
+//O(n log n) Grahamâ€™s Scan
 vector<point> CH(vector<point> P){
 	int n = (int)P.size();
 	
@@ -207,74 +207,74 @@ vector<point> CH(vector<point> P){
 }
 
 int main() {
-  // 6 points, entered in counter clockwise order, 0-based indexing
-  vector<point> P;
-  P.push_back(point(1, 1));
-  P.push_back(point(3, 3));
-  P.push_back(point(9, 1));
-  P.push_back(point(12, 4));
-  P.push_back(point(9, 7));
-  P.push_back(point(1, 7));
-  P.push_back(P[0]); // loop back
+	// 6 points, entered in counter clockwise order, 0-based indexing
+  	vector<point> P;
+  	P.push_back(point(1, 1));
+  	P.push_back(point(3, 3));
+  	P.push_back(point(9, 1));
+  	P.push_back(point(12, 4));
+  	P.push_back(point(9, 7));
+  	P.push_back(point(1, 7));
+  	P.push_back(P[0]); // loop back
 
-  printf("Perimeter of polygon = %.2lf\n", perimeter(P)); // 31.64
-  printf("Area of polygon = %.2lf\n", area(P)); // 49.00
-  printf("Is convex = %d\n", isConvex(P)); // false (P1 is the culprit)
+  	printf("Perimeter of polygon = %.2lf\n", perimeter(P)); // 31.64
+  	printf("Area of polygon = %.2lf\n", area(P)); // 49.00
+  	printf("Is convex = %d\n", isConvex(P)); // false (P1 is the culprit)
 
-  //// the positions of P6 and P7 w.r.t the polygon
-  //7 P5--------------P4
-  //6 |                  \
-  //5 |                    \
-  //4 |   P7                P3
-  //3 |   P1___            /
-  //2 | / P6    \ ___    /
-  //1 P0              P2
-  //0 1 2 3 4 5 6 7 8 9 101112
+  	//// the positions of P6 and P7 w.r.t the polygon
+  	//7 P5--------------P4
+  	//6 |                  \
+  	//5 |                    \
+  	//4 |   P7                P3
+  	//3 |   P1___            /
+  	//2 | / P6    \ ___    /
+  	//1 P0              P2
+  	//0 1 2 3 4 5 6 7 8 9 101112
 
-  point P6(3, 2); // outside this (concave) polygon
-  printf("Point P6 is inside this polygon = %d\n", inPolygon(P6, P)); // false
-  point P7(3, 4); // inside this (concave) polygon
-  printf("Point P7 is inside this polygon = %d\n", inPolygon(P7, P)); // true
+  	point P6(3, 2); // outside this (concave) polygon
+  	printf("Point P6 is inside this polygon = %d\n", inPolygon(P6, P)); // false
+  	point P7(3, 4); // inside this (concave) polygon
+  	printf("Point P7 is inside this polygon = %d\n", inPolygon(P7, P)); // true
 
-  // cutting the original polygon based on line P[2] -> P[4] (get the left side)
-  //7 P5--------------P4
-  //6 |               |  \
-  //5 |               |    \
-  //4 |               |     P3
-  //3 |   P1___       |    /
-  //2 | /       \ ___ |  /
-  //1 P0              P2
-  //0 1 2 3 4 5 6 7 8 9 101112
-  // new polygon (notice the index are different now):
-  //7 P4--------------P3
-  //6 |               |
-  //5 |               |
-  //4 |               |
-  //3 |   P1___       |
-  //2 | /       \ ___ |
-  //1 P0              P2
-  //0 1 2 3 4 5 6 7 8 9
+  	// cutting the original polygon based on line P[2] -> P[4] (get the left side)
+  	//7 P5--------------P4
+  	//6 |               |  \
+  	//5 |               |    \
+  	//4 |               |     P3
+  	//3 |   P1___       |    /
+  	//2 | /       \ ___ |  /
+  	//1 P0              P2
+  	//0 1 2 3 4 5 6 7 8 9 101112
+  	// new polygon (notice the index are different now):
+  	//7 P4--------------P3
+  	//6 |               |
+  	//5 |               |
+  	//4 |               |
+  	//3 |   P1___       |
+  	//2 | /       \ ___ |
+  	//1 P0              P2
+  	//0 1 2 3 4 5 6 7 8 9
 
-  //P = cutPolygon(P[2], P[4], P);
-  //printf("Perimeter of polygon = %.2lf\n", perimeter(P)); // smaller now 29.15
-  ///printf("Area of polygon = %.2lf\n", area(P)); // 40.00
+  	//P = cutPolygon(P[2], P[4], P);
+  	//printf("Perimeter of polygon = %.2lf\n", perimeter(P)); // smaller now 29.15
+  	///printf("Area of polygon = %.2lf\n", area(P)); // 40.00
 
-  // running convex hull of the resulting polygon (index changes again)
-  //7 P3--------------P2
-  //6 |               |
-  //5 |               |
-  //4 |   P7          |
-  //3 |               |
-  //2 |               |
-  //1 P0--------------P1
-  //0 1 2 3 4 5 6 7 8 9
-
-  P = CH(P); // now this is a rectangle
-  printf("Perimeter of polygon = %.2lf\n", perimeter(P)); // precisely 28.00
-  printf("Area of polygon = %.2lf\n", area(P)); // precisely 48.00
-  printf("Is convex = %d\n", isConvex(P)); // true
-  printf("Point P6 is inside this polygon = %d\n", inPolygon(P6, P)); // true
-  printf("Point P7 is inside this polygon = %d\n", inPolygon(P7, P)); // true
-
-  return 0;
+  	// running convex hull of the resulting polygon (index changes again)
+  	//7 P3--------------P2
+  	//6 |               |
+  	//5 |               |
+  	//4 |   P7          |
+  	//3 |               |
+  	//2 |               |
+  	//1 P0--------------P1
+  	//0 1 2 3 4 5 6 7 8 9
+	
+  	P = CH(P); // now this is a rectangle
+  	printf("Perimeter of polygon = %.2lf\n", perimeter(P)); // precisely 28.00
+  	printf("Area of polygon = %.2lf\n", area(P)); // precisely 48.00
+  	printf("Is convex = %d\n", isConvex(P)); // true
+  	printf("Point P6 is inside this polygon = %d\n", inPolygon(P6, P)); // true
+  	printf("Point P7 is inside this polygon = %d\n", inPolygon(P7, P)); // true
+	
+  	return 0;
 }

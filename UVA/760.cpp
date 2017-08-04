@@ -87,23 +87,23 @@ void computeLCP() {
 int owner(int idx) { return (idx < n-m-1) ? 1 : 2; }
 
 vector<ii> LCS(){                 // returns a pair (the LCS length and its index)
-  int i, maxLCP = -1;
-  vector<ii> ans;
+	int i, maxLCP = -1;
+  	vector<ii> ans;
   
-  for (i = 1; i < n; i++)                         // O(n), start from i = 1
-    if (owner(SA[i]) != owner(SA[i-1]) && LCP[i] >= maxLCP){
-		if (LCP[i] > maxLCP) ans.clear();
-		maxLCP = LCP[i];
-		ans.push_back(ii(maxLCP, i));
-	}
+  	for (i = 1; i < n; i++)                         // O(n), start from i = 1
+    		if (owner(SA[i]) != owner(SA[i-1]) && LCP[i] >= maxLCP){
+			if (LCP[i] > maxLCP) ans.clear();
+			maxLCP = LCP[i];
+			ans.push_back(ii(maxLCP, i));
+		}
 	
-  return ans;
+  	return ans;
 }
 
 int main() {
 	int c(0);
     
-    ios_base::sync_with_stdio(false);
+    	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
     
 	while (cin >> T >> P){
@@ -119,10 +119,11 @@ int main() {
 		computeLCP();
 		vector<ii> ans = LCS();
 	    
-        if (ans.size() == 0 || ans[0].first <= 0){ cout << "No common sequence.\n"; continue;}
+        	if (ans.size() == 0 || ans[0].first <= 0){ cout << "No common sequence.\n"; continue;}
+		
 		set<string> s;
-        for (int i = 0; i < ans.size(); i++) s.insert(T.substr(SA[ans[i].second], ans[i].first));
-        for (set<string>::iterator it = s.begin(); it != s.end(); it++) cout << *it << "\n";
+        	for (int i = 0; i < ans.size(); i++) s.insert(T.substr(SA[ans[i].second], ans[i].first));
+        	for (set<string>::iterator it = s.begin(); it != s.end(); it++) cout << *it << "\n";
 	}
 	
 	return 0;

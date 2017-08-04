@@ -16,7 +16,7 @@ int main(){
 		while (num >= 2.0){
 			count++;
 			num /= 2;
-        }
+        	}
 		
 		cout << "Case #" << i+1 << ": " << count << "\n";
 	}

@@ -31,11 +31,12 @@ void ring(int ind, int total){
 int main(){
 	int test, total;
 	
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+    	ios_base::sync_with_stdio(false);
+    	cin.tie(NULL);
     
-    primes.insert(2); primes.insert(3); primes.insert(5); primes.insert(7); primes.insert(11); 
-    primes.insert(13); primes.insert(17); primes.insert(19); primes.insert(23); primes.insert(29); primes.insert(31); //at most 16+15 = 31
+    	primes.insert(2); primes.insert(3); primes.insert(5); primes.insert(7); primes.insert(11); 
+    	primes.insert(13); primes.insert(17); primes.insert(19); primes.insert(23); 
+	primes.insert(29); primes.insert(31); //at most 16+15 = 31
 	//cin >> test;
 	
 	for (int t = 1; cin >> total; t++){

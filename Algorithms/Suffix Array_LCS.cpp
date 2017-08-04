@@ -85,23 +85,23 @@ void computeLCP() {
 int owner(int idx) { return (idx < n-m-1) ? 1 : 2; }
 
 ii LCS(){                 // returns a pair (the LCS length and its index)
-  int i, idx = 0, maxLCP = -1;
-  for (i = 1; i < n; i++)                         // O(n), start from i = 1
-    if (owner(SA[i]) != owner(SA[i-1]) && LCP[i] > maxLCP)
-      maxLCP = LCP[i], idx = i;
-  return ii(maxLCP, idx);
+  	int i, idx = 0, maxLCP = -1;
+  	for (i = 1; i < n; i++)                         // O(n), start from i = 1
+    		if (owner(SA[i]) != owner(SA[i-1]) && LCP[i] > maxLCP)
+      			maxLCP = LCP[i], idx = i;
+  	return ii(maxLCP, idx);
 }
 
 ii LRS() {                 // returns a pair (the LRS length and its index)
-  int i, idx = 0, maxLCP = -1;
-  for (i = 1; i < n; i++)                         // O(n), start from i = 1
-    if (LCP[i] > maxLCP)
-      maxLCP = LCP[i], idx = i;
-  return ii(maxLCP, idx);
+  	int i, idx = 0, maxLCP = -1;
+  	for (i = 1; i < n; i++)                         // O(n), start from i = 1
+    		if (LCP[i] > maxLCP)
+      			maxLCP = LCP[i], idx = i;
+  	return ii(maxLCP, idx);
 }
 
 int main() {
-    cin >> T;
+    	cin >> T;
 	T += '$'; // add terminating character
 	cin >> P;
 	T += P;

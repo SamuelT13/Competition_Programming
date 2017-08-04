@@ -10,12 +10,12 @@ int main(){
 		for (int j = 0; j < N; j++)
 			for (int k = (i-1)&i; k; k = (k-1)&i)
 				dp[i][j] = min(dp[i][j],
-								dp[k][j] + dp[i^k][j]);
+					       dp[k][j] + dp[i^k][j]);
 	
 		for (int j = 0; j < N; j++)
 			for (int k = 0; k < N; k++)
 				dp[i][j] = min(dp[i][j],
-								dp[i][k] + dist[j][k]);
+					       dp[i][k] + dist[j][k]);
 	}
 	
 	return 0;

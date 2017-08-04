@@ -27,14 +27,14 @@ int kmpSearch() { // this is similar as kmpPreprocess(), but on string T
 		i++; j++; // if same, advance both pointers
 
 		if (j == m){ // a match found when j == m
-            return j;
+            		return j;
 			j = b[j]; // prepare j for the next possible match
-        }
+        	}
             
-        if (i == n){ 
-            //cout << j << endl; 
-            return j; 
-        }
+        	if (i == n){ 
+            		//cout << j << endl; 
+            		return j; 
+        	}
 	}
     
     return 0;
@@ -43,8 +43,8 @@ int kmpSearch() { // this is similar as kmpPreprocess(), but on string T
 int main(){
 	string change;
 	
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+    	ios_base::sync_with_stdio(false);
+    	cin.tie(NULL);
     
 	while (cin >> T){
 		P = T;

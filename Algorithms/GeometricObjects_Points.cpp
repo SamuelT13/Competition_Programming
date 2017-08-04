@@ -39,8 +39,7 @@ point rotate(point p, double theta){
 	double rad = theta*(pi/180.0);	
 
 	return point(p.x * cos(rad) - p.y * sin(rad), 
-				 p.x * sin(rad) + p.y * cos(rad)
-				);
+		     p.x * sin(rad) + p.y * cos(rad));
 }
 
 int main(){

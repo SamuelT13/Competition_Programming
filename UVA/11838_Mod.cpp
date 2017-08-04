@@ -23,7 +23,7 @@ void tarjanSCC(int index){
 	
 	if (dfs_low[index] == dfs_num[index]){ //root of SCC
 		//cout << "SCC " << ++numSCC << ":";
-	    ++numSCC;
+	    	++numSCC;
 		
 		while (1){
 			int v = S.back(); S.pop_back(); visited[v] = 0;
@@ -59,12 +59,12 @@ int main(){
 		
 		dfsNumberCounter = numSCC = 0;
   		dfs_num.assign(inter, UNVISITED);
-    	dfs_low.assign(inter, 0);
+    		dfs_low.assign(inter, 0);
 		visited.assign(inter, 0);
 	
-        for (i = 0; i < inter; i++){
-            if (dfs_num[i] == UNVISITED)
-                  tarjanSCC(i);
+        	for (i = 0; i < inter; i++){
+            		if (dfs_num[i] == UNVISITED)
+                  	tarjanSCC(i);
 			if (numSCC > 1) break;
 		}
 		

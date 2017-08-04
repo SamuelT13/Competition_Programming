@@ -49,7 +49,7 @@ int main(){
 				}
 			}
 		}
-	cout << pos << endl;
+		cout << pos << endl;
 
 	}
 	

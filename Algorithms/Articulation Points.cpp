@@ -19,7 +19,7 @@ void artPoints(int ind){
 			
 			artPoints(ind2);
 
-			if (low[ind2] >= num[ind]) art[ind] = 1;
+			if (low[ind2] >= num[ind] && ind != root) art[ind] = 1;
 			if (low[ind2] > num[ind]) ; //bridge
 		
 			low[ind] = min(low[ind], low[ind2]);
